@@ -1,8 +1,10 @@
+
 class TreeNode:
     def __init__(self, data):
         self.data = data
         self.left = None
         self.right = None
+
 
 root = TreeNode('5')
 node1 = TreeNode('12')
@@ -15,21 +17,29 @@ node7 = TreeNode('23')
 node8 = TreeNode('27')
 node9 = TreeNode('3')
 node10 = TreeNode('8')
-node11= TreeNode('11')
+node11 = TreeNode('11')
+
 
 
 root.left = node1
 root.right = node2
 
 node1.left = node3
-node1.right = node4
 
-node2.left = node5
-node2.right = node6
+node2.left = node4
+node2.right = node5
 
-node10.left = node11
+node3.left = node6
+node3.right = node7
 
-# Test
-print("root.right.left.data:", root.right.left.data)
+node4.left = node8
+node4.right = node9
 
-#Python
+node5.left = node10
+node5.right = node11
+
+
+
+print("root:", root.data)  
+print("root left:", root.left.data)          
+print("root right:", root.right.data)        
