@@ -1,45 +1,37 @@
-
 class TreeNode:
     def __init__(self, data):
-        self.data = data
         self.left = None
+        self.data = data
         self.right = None
 
+root = TreeNode(5)
+Level1L = TreeNode(12)
+Level1R = TreeNode(13)
+Level1L2L = TreeNode(7)
+Level1L2L3L = TreeNode(17)
+Level1L2L3R = TreeNode(23)
+Level1R2L = TreeNode(14)
+Level1R2R = TreeNode(2)
+Level1R2L3L = TreeNode(27)
+Level1R2L3R = TreeNode(3)
+Level1R2R3L = TreeNode(8)
+Level1R2R3R = TreeNode(11)
 
-root = TreeNode('5')
-node1 = TreeNode('12')
-node2 = TreeNode('13')
-node3 = TreeNode('7')
-node4 = TreeNode('14')
-node5 = TreeNode('2')
-node6 = TreeNode('17')
-node7 = TreeNode('23')
-node8 = TreeNode('27')
-node9 = TreeNode('3')
-node10 = TreeNode('8')
-node11 = TreeNode('11')
+root.left = Level1L
+root.right = Level1R
 
+Level1L.left = Level1L2L
+Level1L2L.left = Level1L2L3L
+Level1L2L.right = Level1L2L3R
 
+Level1R.left = Level1R2L
+Level1R.right = Level1R2R
 
-root.left = node1
-root.right = node2
+Level1R2L.left = Level1R2L3L
+Level1R2L.right = Level1R2L3R
 
-node1.left = node3
+Level1R2R.left = Level1R2R3L
+Level1R2R.right = Level1R2R3R
 
-node2.left = node4
-node2.right = node5
-
-node3.left = node6
-node3.right = node7
-
-node4.left = node8
-node4.right = node9
-
-node5.left = node10
-node5.right = node11
-
-
-
-print("root:", root.data)  
-print("root left:", root.left.data)          
-print("root right:", root.right.data)        
+# Test
+print("Output:", root.right.right.right.data)
